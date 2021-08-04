@@ -9,6 +9,7 @@
         {
           "matches": ["*://atlas.ai.umich.edu/course/*"],
           "js": ["contentScript.js"],
+          "css": ["button.css"],
           "run_at": "document_end"
         }
       ],

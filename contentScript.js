@@ -1,5 +1,16 @@
-//ADD SWITCHES
+//Creates loading logo
+let loadingContainer = document.createElement("div");
+loadingContainer.id = "loadingSymbol";
 
+let loadingSymbol = document.createElement("img");
+loadingSymbol.src = "/static/images/icons/rolling.gif";
+loadingSymbol.alt = "Loading..";
+loadingSymbol.width = "75";
+loadingSymbol.height = "75";
+
+//Adds loading logo to page
+loadingContainer.appendChild(loadingSymbol);
+document.body.appendChild(loadingContainer);
 
 //Determining the course based on the URL
 const url = location.toString();
@@ -291,6 +302,9 @@ function instructorChecker(instructorList){
 
     window.instructorList = instructorList;
 
+    //Removes loading logo
+    document.getElementById("loadingSymbol").parentNode.removeChild(document.getElementById("loadingSymbol"));
+
     console.log("exiting instructorChecker");
 }
 
@@ -538,19 +552,3 @@ function rateMyProf(instructorList){
     }
 
 }
-
-
-
-//https://stackoverflow.com/questions/16149431/make-function-wait-until-element-exists
-
-//https://stackoverflow.com/questions/32354710/mutationobserver-disconnect-call-inside-callback-function
-
-//https://stackoverflow.com/questions/41323897/disconnect-mutation-observer-from-callback-function
-
-
-
-//TODO:  
-//ADD A LOADING SYMBOL
-//<img src="/static/images/icons/rolling.gif" alt="Loading.." class="loading-gif"></img>
-//START BY ADDING HEADERS FOR TABLE, AND MAKE ALL VALUES BE "LOADING". WHEN ACTUAL VALUES LOAD,
-//REPLACE "LOADING" WITH THE ACTUAL VALUE
