@@ -21,9 +21,13 @@ const courseNumber = courseCode.split("%20")[1];
 //Creates button to check syllabus
 const syllabus = "https://webapps.lsa.umich.edu/syllabi/cg_syllabus_results.aspx?Subject="+department+"&CatNbr="+courseNumber;
 var syllabusDiv = document.createElement("div");
-syllabusDiv.innerHTML = "<a href="+syllabus+" target=\"_blank\" rel=\"noopener noreferrer\">View Syllabus</a>";
-//document.getElementById("credits").appendChild(syllabusDiv);
+let imgURL = chrome.runtime.getURL("magnifying-glass.png");
+syllabusDiv.innerHTML = "<a href=" + syllabus + " target=\"_blank\" rel=\"noopener noreferrer\"><img src=" + imgURL + "></a>";
+let syllabusText = document.createElement("p");
+syllabusText.innerHTML = "Search for Past Syllabi";
+syllabusText.className = "bold bookmark-save-text";
 document.querySelector("div[class=\"bookmark-container\"]").appendChild(syllabusDiv);
+document.querySelector("div[class=\"bookmark-container\"]").appendChild(syllabusText);
 
 //Gets section data from Atlas API
 try{

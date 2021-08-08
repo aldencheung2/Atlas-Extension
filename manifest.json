@@ -4,7 +4,8 @@
     "version": "1.0",
     "manifest_version": 3,
     "permissions": ["tabs"],
-    "host_permissions": ["*://atlas.ai.umich.edu/course/*", "https://www.lsa.umich.edu/cg/*","https://*/", "http://*/", "https://*.ratemyprofessors.com/*", "<all_urls>"],
+    "host_permissions": ["*://atlas.ai.umich.edu/course/*", "https://www.lsa.umich.edu/cg/*", "https://*.ratemyprofessors.com/*"],
+    "web_accessible_resources": [{"matches": ["<all_urls>"], "resources": ["magnifying-glass.png"]}],
     "content_scripts": [
         {
           "matches": ["*://atlas.ai.umich.edu/course/*"],
@@ -16,4 +17,4 @@
     "background":{
       "service_worker": "background.js"
     }
-  }
+}
