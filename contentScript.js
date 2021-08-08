@@ -386,6 +386,9 @@ function expandChecker(){
 function dropdownChange(){
     console.log("change detected");
 
+    //Adds loading symbol
+    document.body.appendChild(loadingContainer);
+
     let loading = document.querySelector("div[class=\"loading-gif\"]");
 
     let pageChanges = 0;
